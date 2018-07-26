@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Bolt Test</title>
+
+    <script type="text/javascript" src="https://cloud.boltiot.com/static/js/boltCommands.js"></script>
+
+    <script>
+        setKey('d1c0747d-cf58-4b22-b97a-cfae6ba9ae2e', 'BOLT7487042');
+
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <center>
+
+        <p class="text"></p>
+        <button class="btn">ON</button>
+
+    </center>
+
+
+    <script type="text/javascript">
+        var response;
+        var i=0;
+
+        $(".btn").click(function() {
+
+            while (i<100) {
+                response = analogRead('A0');
+                data = JSON.loads(response);
+                $(".text").innerHTML('response');
+                i++;
+            }
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
